@@ -3,23 +3,18 @@ import ContentExplorer from "box-ui-elements/es/elements/content-explorer";
 import "./App.css";
 
 function App() {
-  const rootFolderID = "82263541892"; // folder against which the query is run
-  const token = "dev_toekn";
+  const rootFolderID = "216521896990"; // folder against which the query is run
+  const token = "9nZ8667bFHljKDoqUuBuJI2V4XswzK8s";
   const mdQuery = {
-    from: "enterprise_973933.mdBasedContentExplorer", // 973933 is Enterprise ID and mdBasedContentExplorer is metadata template key
-    query: "type <> :arg1",
-    query_params: { arg1: "bill1" },
-    ancestor_folder_id: rootFolderID
+    from: "enterprise_1059715940.MetadataTemplateName", // 973933 is Enterprise ID and mdBasedContentExplorer is metadata template key
+    query: "cost >= :value",
+    query_params: { "value": 1 },
+    ancestor_folder_id: 216521896990
   };
 
   // The metadata fields/columns to view - must be valid field names from the metadata template
   const metadataColumnsToShow = [
-    { name: "type", canEdit: true },
-    { name: "vendor", canEdit: true },
-    { name: "amount", canEdit: true },
-    { name: "year", canEdit: true },
-    { name: "approved", canEdit: true },
-    { name: "created", canEdit: true }
+    { name: "cost", canEdit: true },
   ];
   const defaultView = "metadata"; // Required prop to paint the metadata view. If not provided, you'll get regular folder view.
 
